@@ -2,7 +2,7 @@ import pymysql
 import pandas as pd
 class ConnectDB:
     def __init__(self):
-        self.con=pymysql.connect(host='localhost',user='root',password='vital615',database='doctors')
+        self.con=pymysql.connect(host='localhost',user='root',password='password',database='database name')#enter your password and database name
     def insert_records(self):
         self.cursor=self.con.cursor()
         #inserting records
