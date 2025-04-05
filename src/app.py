@@ -24,16 +24,24 @@ if menu == "Predict Disease":
     df=pd.read_csv('archive/Symptom-severity.csv')
     unique_diseases = df["Symptom"].unique()
     symptoms = st.multiselect(
-        "Select atmost 3 symptoms:",
+        "Select  symptoms below:",
         unique_diseases
     )
 
     # Predict Button
     if st.button("Predict"):
         print(symptoms)
+        length=len(symptoms)
+        print(length)
+        rem=17-len(symptoms)
+        print('remaining length:',rem)
+        for i in range(rem):
+            symptoms.append(0)
+        print('final length',len(symptoms))
+
         print(type(symptoms))
         if symptoms:
-            result = prediction.predd(model, symptoms[0], symptoms[1], symptoms[2], 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+            result = prediction.predd(model, symptoms[0], symptoms[1], symptoms[2], symptoms[3], symptoms[4], symptoms[5], symptoms[6], symptoms[7],symptoms[8], symptoms[9], symptoms[10], symptoms[11], symptoms[12], symptoms[13], symptoms[14], symptoms[15], symptoms[16])
         
             disease_predicted = result[0]
             st.success(f"Disease Predicted: {disease_predicted}")

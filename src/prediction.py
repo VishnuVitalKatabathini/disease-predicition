@@ -8,7 +8,7 @@ df1=pd.read_csv('archive/Symptom-severity.csv')
 discrp=pd.read_csv('archive/symptom_Description.csv')
 ektra7at=pd.read_csv('archive/symptom_precaution.csv')
 
-rnd_forest=joblib.load('random_forest.joblib')
+rnd_forest=joblib.load('src/random_forest.joblib')
 def predd(x,S1,S2,S3,S4,S5,S6,S7,S8,S9,S10,S11,S12,S13,S14,S15,S16,S17):
     psymptoms = [S1,S2,S3,S4,S5,S6,S7,S8,S9,S10,S11,S12,S13,S14,S15,S16,S17]
     print(psymptoms)
